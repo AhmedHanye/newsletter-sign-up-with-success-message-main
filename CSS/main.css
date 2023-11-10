@@ -166,6 +166,7 @@ li {
   position: absolute;
   bottom: 1.5rem;
   color: var(--white);
+  font-weight: 700;
 }
 #attribution > a {
   display: inline-block;
@@ -235,6 +236,9 @@ li {
   }
   #attribution {
     color: var(--dark-slate-grey);
+  }
+  #attribution > a {
+    color: var(--highlight-pink);
   }
 }
 @media (max-width: 701px) and (min-width: 401px) {
