@@ -1,0 +1,302 @@
+/* Variables */
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --highlight-pink: rgb(231, 76, 136);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+/* Google Fonts */
+@font-face {
+  font-family: "Overpass", sans-serif;
+  src: url("../assets/fonts/Roboto-Bold.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Overpass", sans-serif;
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: 16px;
+  background-color: var(--charcoal-grey);
+  height: 100vh;
+  position: relative;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+/* Classes */
+.flex1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex2 {
+  /* To place an icon and text at the same level */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.flex3 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.flex4 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.gradient:hover {
+  background-image: linear-gradient(
+    127deg,
+    var(--highlight-pink) 10%,
+    var(--tomato) 90%
+  );
+}
+/* ID's */
+#sign-up {
+  width: 58rem;
+  height: 38.5rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 1.5rem;
+}
+#sign-up > #left-side {
+  width: 27rem;
+  height: 100%;
+  padding: 0 0 0 2.5rem;
+  flex-direction: column;
+}
+#sign-up > #left-side > h1 {
+  width: 100%;
+  font-size: 3.2rem;
+  color: var(--dark-slate-grey);
+  margin: 1.5rem;
+}
+#sign-up > #left-side > p {
+  width: 100%;
+}
+#sign-up > #left-side > #list {
+  width: 100%;
+  margin-top: 1.5rem;
+  line-height: 2rem;
+}
+#sign-up > #left-side > #email {
+  width: 100%;
+  margin-top: 2.2rem;
+}
+#sign-up > #left-side > #email > label {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+#sign-up > #left-side > #email > #email-input {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 0.07rem solid var(--grey);
+  border-radius: 0.2rem;
+}
+#sign-up > #left-side > #email > #email-input:focus {
+  border-width: 0.1rem;
+}
+#sign-up > #left-side > #submit {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--white);
+  background-color: var(--dark-slate-grey);
+  margin-top: 1rem;
+  cursor: pointer;
+}
+#sign-up > #right-side {
+  width: 31rem;
+  height: 100%;
+  overflow: hidden;
+}
+#message {
+  width: 32rem;
+  height: 32rem;
+  padding: 4rem;
+  border-radius: 1.5rem;
+  background-color: var(--white);
+}
+#message > h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 3.2rem;
+}
+#message > p {
+  line-height: 1.4rem;
+}
+#message > p > span {
+  font-weight: 700;
+}
+#message > #dismiss {
+  width: 25rem;
+  padding: 1.2rem;
+  margin-top: 2.5rem;
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+#attribution {
+  position: absolute;
+  bottom: 1.5rem;
+  color: var(--grey);
+}
+#attribution > a {
+  display: inline-block;
+  color: var(--tomato);
+  margin: 0 0.2rem;
+  transition: 0.3s;
+}
+#attribution > a:hover {
+  color: var(--white);
+  transform: translateY(-0.1rem);
+}
+
+/* Media Queries */
+@media (max-width: 992px) and (min-width: 801px) {
+  #sign-up {
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 800px) and (min-width: 701px) {
+  #sign-up {
+    transform: scale(0.7);
+  }
+}
+@media (max-width: 701px) {
+  #sign-up {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    flex-direction: column-reverse;
+  }
+  #sign-up > #right-side {
+    background-image: url(../assets/images/illustration-sign-up-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    border-radius: 0 0 1.5rem 1.5rem;
+    height: 60%;
+  }
+  #sign-up > #right-side > img {
+    display: none;
+  }
+  #sign-up > #left-side {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 1.4rem;
+  }
+  #message {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+  }
+  #message > h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 2.5rem;
+  }
+  #message > p {
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+  }
+  #message > #dismiss {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+  }
+  #attribution {
+    color: var(--dark-slate-grey);
+  }
+  #attribution > a:hover {
+    color: var(--highlight-pink);
+  }
+}
+@media (max-width: 701px) and (min-width: 401px) {
+  #sign-up > #left-side > h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+  #sign-up > #left-side > p {
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+  }
+  #sign-up > #left-side > #list {
+    margin-top: 1rem;
+    line-height: 1.8rem;
+  }
+  #sign-up > #left-side > #list > li {
+    font-size: 0.8rem;
+  }
+  #sign-up > #left-side > #email {
+    margin-top: 1.5rem;
+  }
+  #attribution {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 400px) {
+  #sign-up > #left-side > h1 {
+    font-size: 2rem;
+    margin: 0.8rem 0;
+  }
+  #sign-up > #left-side > p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+  }
+  #sign-up > #left-side > #list {
+    margin-top: 1rem;
+    line-height: 1.2rem;
+  }
+  #sign-up > #left-side > #list > li {
+    font-size: 0.7rem;
+    gap: 0.5rem;
+  }
+  #sign-up > #left-side > #list > li > img {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  #sign-up > #left-side > #email {
+    margin-top: 1.2rem;
+  }
+  #sign-up > #left-side > #email > #email-input {
+    padding: 0.6rem;
+    margin: 0.4rem 0;
+  }
+  #sign-up > #left-side > #submit {
+    padding: 0.7rem;
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+  }
+  #attribution {
+    font-size: 0.6rem;
+  }
+}
