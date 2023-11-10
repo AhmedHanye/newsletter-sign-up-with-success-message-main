@@ -1,6 +1,6 @@
 /* Variables */
 :root {
-  --tomato: hsl(4, 100%, 67%);
+  --tomato: #fd7c72;
   --highlight-pink: rgb(231, 76, 136);
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
@@ -165,17 +165,17 @@ li {
 #attribution {
   position: absolute;
   bottom: 1.5rem;
-  color: var(--grey);
+  color: var(--white);
 }
 #attribution > a {
   display: inline-block;
   color: var(--tomato);
   margin: 0 0.2rem;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 #attribution > a:hover {
-  color: var(--white);
-  transform: translateY(-0.1rem);
+  color: var(--highlight-pink);
+  transform: translateY(-0.08rem);
 }
 
 /* Media Queries */
@@ -235,9 +235,6 @@ li {
   }
   #attribution {
     color: var(--dark-slate-grey);
-  }
-  #attribution > a:hover {
-    color: var(--highlight-pink);
   }
 }
 @media (max-width: 701px) and (min-width: 401px) {
