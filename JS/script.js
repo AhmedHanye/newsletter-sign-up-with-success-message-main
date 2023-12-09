@@ -9,7 +9,7 @@ const emailInput = document.querySelector("#email-input");
 // Function to check email validation using a regular expression
 function isValidEmail(email) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return email.match(emailRegex) !== null;
+  return emailRegex.test(email);
 }
 
 // Event listener for the submit button
