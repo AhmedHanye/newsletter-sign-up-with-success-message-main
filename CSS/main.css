@@ -43,7 +43,7 @@ a {
 li {
   list-style: none;
 }
-/* Classes */
+/* ---- Classes ---- */
 .flex1 {
   display: flex;
   justify-content: center;
@@ -73,7 +73,21 @@ li {
     var(--tomato) 90%
   );
 }
-/* ID's */
+.Error::before {
+  /* To display error message if the email isn't valid */
+  content: "Valid email required";
+  position: absolute;
+  font-size: 0.7rem;
+  font-weight: 700;
+  top: 0;
+  right: 0;
+  color: var(--tomato);
+}
+.hidden {
+  display: none;
+}
+/* ---- ID's ---- */
+/* main */
 #sign-up {
   width: 58rem;
   height: 38.5rem;
@@ -81,6 +95,7 @@ li {
   background-color: white;
   border-radius: 1.5rem;
 }
+/* main --> left-side */
 #sign-up > #left-side {
   width: 27rem;
   height: 100%;
@@ -104,6 +119,7 @@ li {
 #sign-up > #left-side > #email {
   width: 100%;
   margin-top: 2.2rem;
+  position: relative;
 }
 #sign-up > #left-side > #email > label {
   font-size: 0.7rem;
@@ -117,7 +133,7 @@ li {
   border-radius: 0.2rem;
 }
 #sign-up > #left-side > #email > #email-input:focus {
-  border-width: 0.1rem;
+  outline: 0.1rem solid black;
 }
 #sign-up > #left-side > #submit {
   width: 100%;
@@ -129,11 +145,14 @@ li {
   margin-top: 1rem;
   cursor: pointer;
 }
+/* main --> right-side */
 #sign-up > #right-side {
   width: 31rem;
   height: 100%;
+  border-radius: 0 1rem 1rem 0rem;
   overflow: hidden;
 }
+/* message */
 #message {
   width: 32rem;
   height: 32rem;
@@ -162,6 +181,7 @@ li {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+/* footer */
 #attribution {
   position: absolute;
   bottom: 1.5rem;
@@ -176,7 +196,7 @@ li {
 }
 #attribution > a:hover {
   color: var(--highlight-pink);
-  transform: translateY(-0.08rem);
+  transform: translateY(-0.06rem);
 }
 
 /* Media Queries */
@@ -218,6 +238,7 @@ li {
     width: 100%;
     height: 100%;
     padding: 2rem;
+    border-radius: 0;
   }
   #message > h1 {
     font-size: 2.5rem;
@@ -297,11 +318,11 @@ li {
     margin: 0.4rem 0;
   }
   #sign-up > #left-side > #submit {
-    padding: 0.7rem;
+    padding: 0.8rem;
     margin-top: 0.8rem;
     font-size: 0.8rem;
   }
   #attribution {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
 }
